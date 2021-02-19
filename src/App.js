@@ -3,19 +3,21 @@ import React, { Component } from "react";
 import AddForm from './components/AddForm';
 import SmurfList from './components/SmurfList';
 import Header from './components/Header';
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
+import {fetchSmurfs} from "./actions/index"
 
 class App extends Component {
-  render() {
+  render() 
+  
+  {console.log(fetchSmurfs)
     return (
       <div className="App">
         <Header />
 
         <main>
-          <SmurfList/>
-          <AddForm/>
+          <SmurfList fetchSmurfs={fetchSmurfs}/>
+          <AddForm fetchSmurfs={fetchSmurfs}/>
         </main>
       </div>
     );

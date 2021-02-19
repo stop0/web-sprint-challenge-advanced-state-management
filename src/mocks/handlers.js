@@ -1,6 +1,6 @@
 import { rest } from 'msw';
 
-let smurfs = [
+export let smurfs = [
   {
     id:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
     name:'Poppa Smurf',

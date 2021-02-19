@@ -1,8 +1,38 @@
+import {FETCH_SMURFS_LOADING, FETCH_SMURFS_SUCCESS,FETCH_SMURFS_FAIL} from "../actions/index"
+
 
 export const initialState = {
+    smurfs : [],
+    isLoaded:false,
+    error:""
 }
 
-const reducer = ()=>{
+export const reducer = (state = initialState, action)=>{
+    switch (action.type) {
+        case(FETCH_SMURFS_LOADING):
+          return({
+            ...state,
+            isLoaded: true
+          });
+    
+        case(FETCH_SMURFS_SUCCESS):
+          return({
+              
+            ...state,
+            smurfs: action.payload,
+            isLoaded: false
+          });
+    
+        case(FETCH_SMURFS_FAIL):
+          return({
+            ...state,
+            error: action.payload,
+            isFeisLoadedtching: false
+          });
+          
+        default:
+          return state;
+      }
 }
 
 export default reducer;
