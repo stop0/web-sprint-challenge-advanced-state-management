@@ -6,6 +6,7 @@ import Header from './components/Header';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 import {fetchSmurfs} from "./actions/index"
+import {addSmurf} from "./actions/index"
 
 class App extends Component {
   render() 
@@ -17,7 +18,7 @@ class App extends Component {
 
         <main>
           <SmurfList fetchSmurfs={fetchSmurfs}/>
-          <AddForm fetchSmurfs={fetchSmurfs}/>
+          <AddForm addSmurf={addSmurf}/>
         </main>
       </div>
     );

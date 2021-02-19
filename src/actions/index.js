@@ -3,7 +3,7 @@ import { smurfs } from "../mocks/handlers"
 export const FETCH_SMURFS_LOADING = "FETCH_SMURFS_LOADING"
 export const FETCH_SMURFS_SUCCESS = "FETCH_SMURFS_SUCCESS"
 export const FETCH_SMURFS_FAIL = "FETCH_SMURFS_FAIL"
-
+export const ADD_SMURF = "ADD_SMURF"
 export const fetchSmurfs = () => dispatch => {
     dispatch(fetchSmurfsLoading());
     axios
@@ -30,7 +30,6 @@ export const fetchSmurfsSuccess = (smurf) => {
 export const fetchSmurfsFail = (error) => {
     return({type:FETCH_SMURFS_FAIL, payload:error});
 }
-export const ADD_SMURF = "ADD_SMURF";
 
 export const addSmurf = smurf => {
     return dispatch => {

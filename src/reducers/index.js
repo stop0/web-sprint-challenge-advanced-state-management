@@ -1,4 +1,4 @@
-import {FETCH_SMURFS_LOADING, FETCH_SMURFS_SUCCESS,FETCH_SMURFS_FAIL} from "../actions/index"
+import {FETCH_SMURFS_LOADING, FETCH_SMURFS_SUCCESS,FETCH_SMURFS_FAIL,ADD_SMURF} from "../actions/index"
 
 
 export const initialState = {
@@ -29,7 +29,11 @@ export const reducer = (state = initialState, action)=>{
             error: action.payload,
             isFeisLoadedtching: false
           });
-          
+          case ADD_SMURF:   
+          return {
+              ...state,
+              smurfs: action.payload
+          };
         default:
           return state;
       }
